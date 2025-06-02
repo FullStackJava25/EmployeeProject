@@ -33,7 +33,7 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeDto);
     }
 
-    // 🔹 Get All Employees
+    // 🔹 Get All Employees api's
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
         List<EmployeeDto> employees = employeeService.getAllEmployees();

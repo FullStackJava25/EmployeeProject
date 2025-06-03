@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  app:
+    image: my-spring-boot-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/empmanage
+      SPRING_DATASOURCE_USERNAME: javastudent
+      SPRING_DATASOURCE_PASSWORD: javastudent123
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
